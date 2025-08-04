@@ -38,7 +38,17 @@ tree_app/
 ├── class_names.json # Tree species label mapping
 ├── best_weights_effnetv2_finetuned_adamw.keras
 └── README.md
+---
 
+## 📸 Screenshots
+
+| Upload Mode | Prediction Result |
+| :---: | :---: |
+| ![A screenshot of the image upload page of the web app](<img width="577" height="872" alt="Screenshot 2025-08-05 001308" src="https://github.com/user-attachments/assets/f9268906-41b3-4190-a799-95e38102468c" />
+) | ![A screenshot showing the prediction results with confidence scores](<img width="602" height="908" alt="Screenshot 2025-08-05 000855" src="https://github.com/user-attachments/assets/0de7384f-1a1d-41f6-b1e1-b1d90c44c05d" />
+) |
+
+---
 
 ---
 
