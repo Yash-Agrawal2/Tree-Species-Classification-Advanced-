@@ -38,20 +38,20 @@ tree_app/
 ├── class_names.json # Tree species label mapping
 ├── best_weights_effnetv2_finetuned_adamw.keras
 └── README.md
+
+
+---
 ---
 
 ## 📸 Screenshots
 
-| Upload Mode | Prediction Result |
+| Sucessfull Classification| Rejection System|
 | :---: | :---: |
-| ![A screenshot of the image upload page of the web app](<img width="577" height="872" alt="Screenshot 2025-08-05 001308" src="https://github.com/user-attachments/assets/f9268906-41b3-4190-a799-95e38102468c" />
-) | ![A screenshot showing the prediction results with confidence scores](<img width="602" height="908" alt="Screenshot 2025-08-05 000855" src="https://github.com/user-attachments/assets/0de7384f-1a1d-41f6-b1e1-b1d90c44c05d" />
-) |
+| ![The web application accurately identified **'Mountain Ebony'** with high confidence, demonstrating precise classification capabilities.]<img <img width="545" height="856" alt="Screenshot 2025-08-05 000855" src="https://github.com/user-attachments/assets/0e174096-31dc-4020-be20-e39f1e5f8137" />
+ />| ![The system correctly rejected an unrelated input, classifying it as **"Not a tree image,"** highlighting the robust **"Other"** class and rejection threshold.]<img<img width="540" height="845" alt="Screenshot 2025-08-05 001308" src="https://github.com/user-attachments/assets/bdbdd237-6934-4566-b224-75634d6a9486" />
+ /> |
 
 ---
-
----
-
 ## 💻 How to Run Locally
 
 ### 1. Clone the repository
