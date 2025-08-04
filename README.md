@@ -29,16 +29,20 @@ Built using **Flask + Tailwind CSS**, the frontend provides a responsive, mobile
 ---
 
 ## 📁 Directory Structure
-
-tree_app/
-├── app.py # Flask backend
-├── templates/
-│ └── index.html # Frontend UI
-├── static/ # Assets (optional)
-├── class_names.json # Tree species label mapping
-├── best_weights_effnetv2_finetuned_adamw.keras
-└── README.md
-
+```
+Tree-species-classification/
+├── dataset/                    # Training and validation data for the models
+├── models/                     # Pre-trained models and checkpoints
+├── tree_app/
+│   ├── app.py                  # Flask backend
+│   ├── templates/
+│   │   └── index.html          # Frontend UI
+│   ├── static/                 # Assets (CSS, JS, images, etc.)
+│   ├── class_names.json        # Tree species label mapping
+│   ├── best_weights_effnetv2_finetuned_adamw.keras
+│   └── README.md
+└── .gitignore                  # Git ignore file to exclude unnecessary files
+```
 
 
 
