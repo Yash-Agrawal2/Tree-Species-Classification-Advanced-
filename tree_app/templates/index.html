@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tree Species Identifier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
+  <style>
+    .spinner-ring { border-top-color: transparent; }
+    .fade-in { animation: fadeIn 0.3s ease-in forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-100 to-green-200 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 space-y-6">
+
+    <h1 class="text-3xl font-bold text-green-700 text-center">🌳 Tree Species Identifier</h1>
+
+    <!-- Drop-zone -->
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label id="dropzone"
+             class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-green-300 rounded-xl cursor-pointer transition">
+        <svg id="dropIcon" class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+        </svg>
+        <span id="dropText" class="mt-2 text-sm text-gray-500">Drag & drop or click to browse</span>
+        <input type="file" name="file" accept="image/*" required class="hidden">
+      </label>
+
+      <div class="flex items-center space-x-2 mt-4">
+        <button type="submit"
+                class="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 rounded-full transition">
+          Predict
+        </button>
+        <button type="button" id="clearBtn"
+                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2.5 px-4 rounded-full transition">
+          Clear
+        </button>
+      </div>
+    </form>
+
+    <!-- Spinner -->
+    <div id="spinner" class="hidden text-center">
+      <div class="w-6 h-6 border-4 border-green-500 border-solid rounded-full animate-spin spinner-ring mx-auto"></div>
+      <p class="text-sm text-gray-500 mt-1">Identifying…</p>
+    </div>
+
+    <!-- Result Card -->
+    <div id="resultCard" class="hidden bg-green-50 p-4 rounded-xl text-center fade-in">
+      <img id="preview" class="rounded-lg mx-auto mb-3 max-h-64 object-contain" />
+      <h2 id="resultHeader" class="text-lg font-bold text-green-800"></h2>
+      <p id="resultConf" class="text-sm text-gray-600 mt-1"></p>
+    </div>
+
+  </div>
+
+  <script>
+    const form       = document.getElementById('uploadForm');
+    const dropzone   = document.getElementById('dropzone');
+    const spinner    = document.getElementById('spinner');
+    const resultCard = document.getElementById('resultCard');
+    const preview    = document.getElementById('preview');
+    const resultHeader = document.getElementById('resultHeader');
+    const resultConf   = document.getElementById('resultConf');
+    const clearBtn   = document.getElementById('clearBtn');
+
+    /* ---------- helpers ---------- */
+    function resetUI() {
+      form.file.value = '';
+      resultCard.classList.add('hidden');
+      dropzone.classList.remove('border-green-500');
+      document.getElementById('dropText').textContent = 'Drag & drop or click to browse';
+    }
+    function showDropped(filename) {
+      document.getElementById('dropText').textContent = `Selected: ${filename}`;
+    }
+
+    /* ---------- drag & drop ---------- */
+    ['dragenter', 'dragover'].forEach(evt =>
+      dropzone.addEventListener(evt, e => { e.preventDefault(); dropzone.classList.add('border-green-500'); })
+    );
+    ['dragleave', 'drop'].forEach(evt =>
+      dropzone.addEventListener(evt, e => { e.preventDefault(); dropzone.classList.remove('border-green-500'); })
+    );
+    dropzone.addEventListener('drop', e => {
+      e.preventDefault();
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        form.file.files = e.dataTransfer.files;
+        showDropped(file.name);
+      }
+    });
+
+    /* ---------- browse ---------- */
+    form.file.addEventListener('change', () => {
+      if (form.file.files[0]) showDropped(form.file.files[0].name);
+    });
+
+    /* ---------- clear ---------- */
+    clearBtn.addEventListener('click', resetUI);
+
+    /* ---------- submit ---------- */
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const file = form.file.files[0];
+      if (!file) return;
+
+      spinner.classList.remove('hidden');
+      resultCard.classList.add('hidden');
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const res = await fetch('/predict', { method:'POST', body:formData });
+        const data = await res.json();
+
+        preview.src = URL.createObjectURL(file);
+
+        if (data.label === "Not a tree image") {
+          resultHeader.textContent = 'Not a tree image';
+          resultConf.textContent   = '';
+        } else {
+          resultHeader.textContent = data.label;
+          resultConf.textContent   = `${(data.confidence*100).toFixed(1)}%`;
+        }
+        resultCard.classList.remove('hidden');
+      } catch (err) {
+        alert('Prediction failed: ' + err);
+      } finally {
+        spinner.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
