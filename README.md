@@ -49,56 +49,37 @@ Edit
 
 ### 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/your-username/tree-species-classifier.git
 cd tree-species-classifier
-2. Install dependencies
+**2. Install dependencies**
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Or install manually:
-
-bash
-Copy
-Edit
+**Or install manually:**
 pip install flask tensorflow pillow numpy matplotlib seaborn scikit-learn tqdm
-3. Start the server
-bash
-Copy
-Edit
+**3. Start the server**
 python app.py
 Go to http://localhost:5000 to use the app.
+```
 
-🔗 Sample Google Images Usage
-You can paste an image URL from sites like Wikimedia Commons or direct image hosts.
-⚠️ Google’s images.app.goo.gl is a redirect and won’t work directly.
-
-Instead:
-
-Open the image in a new tab
-
-Copy the direct image URL (it ends with .jpg or .png)
-
-Paste it into the input box
-
-📸 Screenshots
-Upload Mode	Prediction Result
-
-👨‍💻 Author
+---
+##👨‍💻 Author
 Manish Kumar Gupta
 B.Tech (CST), UEM Kolkata
 Email: mkrock2397456@gmail.com
 Passionate about AI, web development, and real-world problem solving.
 
-📃 License
+##📃 License
 MIT License – feel free to use, modify, or contribute.
 
-✨ Acknowledgments
-TensorFlow/Keras
+##✨ Acknowledgments
+-TensorFlow/Keras
 
-Hugging Face (for model ideas)
+-Hugging Face (for model ideas)
 
-Tailwind CSS for frontend styling
+-Tailwind CSS for frontend styling
 
 UEM, Kolkata – for academic inspiration
+---
