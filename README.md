@@ -47,9 +47,9 @@ tree_app/
 
 | Sucessfull Classification| Rejection System|
 | :---: | :---: |
-| ![The web application accurately identified **'Mountain Ebony'** with high confidence, demonstrating precise classification capabilities.]<img <img width="545" height="856" alt="Screenshot 2025-08-05 000855" src="https://github.com/user-attachments/assets/0e174096-31dc-4020-be20-e39f1e5f8137" />
- />| ![The system correctly rejected an unrelated input, classifying it as **"Not a tree image,"** highlighting the robust **"Other"** class and rejection threshold.]<img<img width="540" height="845" alt="Screenshot 2025-08-05 001308" src="https://github.com/user-attachments/assets/bdbdd237-6934-4566-b224-75634d6a9486" />
- /> |
+| ![The web application accurately identified **'Mountain Ebony'** with high confidence, demonstrating precise classification capabilities.]<img width="545" height="856" alt="image" src="https://github.com/user-attachments/assets/38b1382e-fc8b-48ea-b2d9-1bb9d7632ac5" />
+ />| ![The system correctly rejected an unrelated input, classifying it as **"Not a tree image,"** highlighting the robust **"Other"** class and rejection threshold.]<img width="540" height="845" alt="image" src="https://github.com/user-attachments/assets/08e2abdc-4dc5-4502-a7fd-60d97d61c7ab" />
+|
 
 ---
 ## 💻 How to Run Locally
