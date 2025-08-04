@@ -64,7 +64,7 @@ Go to http://localhost:5000 to use the app.
 ## 👨‍💻 Author
 **Manish Kumar Gupta**
 * B.Tech (CST), UEM Kolkata
-* Email: mkrock2397456@gmail.com
+* Email: manishgupta20226@gmail.com
 * Passionate about AI, web development, and real-world problem solving.
 
 ## 📃 License
