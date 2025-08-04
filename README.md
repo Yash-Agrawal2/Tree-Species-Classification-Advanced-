@@ -61,21 +61,17 @@ pip install flask tensorflow pillow numpy matplotlib seaborn scikit-learn tqdm
 python app.py
 Go to http://localhost:5000 to use the app.
 ```
----
-##👨‍💻 Author
-Manish Kumar Gupta
-B.Tech (CST), UEM Kolkata
-Email: mkrock2397456@gmail.com
-Passionate about AI, web development, and real-world problem solving.
+## 👨‍💻 Author
+**Manish Kumar Gupta**
+* B.Tech (CST), UEM Kolkata
+* Email: mkrock2397456@gmail.com
+* Passionate about AI, web development, and real-world problem solving.
 
-##📃 License
+## 📃 License
 MIT License – feel free to use, modify, or contribute.
 
-##✨ Acknowledgments
-
--TensorFlow/Keras
--Hugging Face (for model ideas)
--Tailwind CSS for frontend styling
-
-UEM, Kolkata – for academic inspiration
----
+## ✨ Acknowledgments
+* TensorFlow/Keras
+* Hugging Face (for model ideas)
+* Tailwind CSS for frontend styling
+* UEM, Kolkata – for academic inspiration
