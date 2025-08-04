@@ -27,7 +27,18 @@ Built using **Flask + Tailwind CSS**, the frontend provides a responsive, mobile
 - 🔁 Clear/Reset form functionality
 
 ---
+---
+## 📈 Model Performance
 
+| Model | Params | Validation Accuracy | Macro-F1 | Top-3 Accuracy |
+| :--- | :---: | :---: | :---: | :---: |
+| CNN (Scratch) | 1.2 M | 26.9 % | 0.24 | — |
+| MobileNetV2 (head-only) | 2.2 M | 68.4 % | 0.68 | 87 % |
+| MobileNetV2 (fine-tuned, SGD) | 2.4 M | 69.7 % | 0.68 | 89 % |
+| MobileNetV2 (fine-tuned, AdamW) | 2.4 M | 72.1 % | 0.68 | 90 % |
+| EfficientNetV2-B0 (head-only) | 4.2 M | 76.5 % | 0.70 | 94 % |
+| EfficientNetV2-B0 (fine-tuned) | 4.2 M | 77.2 % | 0.70 | 96 % |
+---
 ## 📁 Directory Structure
 ```
 Tree-species-classification/
@@ -64,13 +75,13 @@ Tree-species-classification/
 git clone https://github.com/your-username/tree-species-classifier.git
 cd tree-species-classifier
 ```
-###2. Install dependencies
+### 2. Install dependencies
 ```
 pip install -r requirements.txt
 **Or install manually:**
 pip install flask tensorflow pillow numpy matplotlib seaborn scikit-learn tqdm
 ```
-###3. Start the server**
+### 3. Start the server**
 ```
 python app.py
 Go to http://localhost:5000 to use the app.
