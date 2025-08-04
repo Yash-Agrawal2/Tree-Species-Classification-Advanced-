@@ -90,6 +90,7 @@ Go to http://localhost:5000 to use the app.
 **Manish Kumar Gupta**
 * B.Tech (CST), UEM Kolkata
 * Email: manishgupta20226@gmail.com
+* LinkedIn: https://www.linkedin.com/in/manni2026/
 * Passionate about AI, web development, and real-world problem solving.
 
 ## 📃 License
