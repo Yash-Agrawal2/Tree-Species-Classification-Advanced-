@@ -39,9 +39,6 @@ tree_app/
 ├── best_weights_effnetv2_finetuned_adamw.keras
 └── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -52,18 +49,18 @@ Edit
 ```
 git clone https://github.com/your-username/tree-species-classifier.git
 cd tree-species-classifier
-**2. Install dependencies**
-bash
-Copy
-Edit
+```
+###2. Install dependencies
+```
 pip install -r requirements.txt
 **Or install manually:**
 pip install flask tensorflow pillow numpy matplotlib seaborn scikit-learn tqdm
-**3. Start the server**
+```
+###3. Start the server**
+```
 python app.py
 Go to http://localhost:5000 to use the app.
 ```
-
 ---
 ##👨‍💻 Author
 Manish Kumar Gupta
@@ -75,10 +72,9 @@ Passionate about AI, web development, and real-world problem solving.
 MIT License – feel free to use, modify, or contribute.
 
 ##✨ Acknowledgments
+
 -TensorFlow/Keras
-
 -Hugging Face (for model ideas)
-
 -Tailwind CSS for frontend styling
 
 UEM, Kolkata – for academic inspiration
