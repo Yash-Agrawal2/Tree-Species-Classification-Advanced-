@@ -87,10 +87,9 @@ python app.py
 Go to http://localhost:5000 to use the app.
 ```
 ## 👨‍💻 Author
-**Manish Kumar Gupta**
+**Yash Agrawal**
 * B.Tech (CST), UEM Kolkata
-* Email: manishgupta20226@gmail.com
-* LinkedIn: https://www.linkedin.com/in/manni2026/
+* Email: yash.agrawal0303@gmail.com
 * Passionate about AI, web development, and real-world problem solving.
 
 ## 📃 License
